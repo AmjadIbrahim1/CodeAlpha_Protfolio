@@ -1,0 +1,246 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --primary-color: #1f2020;
+    --secondary-color: #fff;
+    --tertiary-color: #2d2d2d;
+}
+body{
+    background-color: var(--primary-color);
+}
+.container-fluid{
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+/* Navbar */
+.NAV{
+    background-color: var(--tertiary-color) !important;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.Nav-List{
+    font-size: 18px;
+}
+.NAV h1 {
+    font-size: 24px;
+}
+.Nav-List li a ,.NAV h1 {
+    color: white !important;
+}
+.Nav-List li a{
+    position: relative;
+}
+.Nav-List li a::before ,.Nav-List li a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    visibility: hidden;
+    transition: 0.5s;
+}
+.Nav-List li a::before{
+    left: 0;
+    bottom: 0;
+}
+.Nav-List li a::after{
+    right: 0;
+    top: 0;
+}
+.Nav-List li a:hover::before,.Nav-List li a:hover::after{
+    width: 100%;
+    visibility: visible;
+}
+.Nav-List li a:hover::before {
+    right: 0;
+    bottom: 0;
+}
+.Nav-List li a:hover::after {
+    top: 0;
+    right: 0;
+}
+.Nav-List li a i{
+    margin-right: 10px;
+}
+.Nav-List li a:hover i{
+    color: var(--tertiary-color);
+    text-shadow: 0 0 2px white;
+}
+
+/* Home */
+.Home-img{
+    background-image: url(../img/1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.Home-Description h1 ,.Home-Description p{
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+}
+.Home-Description p{
+    font-size: 20px;
+}
+.Home-Description h1{
+    animation: Moving-Header 5s infinite linear;
+}
+
+@keyframes Moving-Header {
+    0%{
+        transform: rotate(5deg);
+    }
+    25%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-5deg);
+    }
+    75%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(5deg);
+    }
+}
+
+/* About  */
+
+.About-Me{
+    transform: rotate(1deg);
+}
+.About-Me p {
+    font-size: 20px;
+    color: white;
+
+}
+.About-Title,.Projects-Title h2{
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+}
+.About-Technologies{
+    background-color: #fff;
+    transform: rotate(1deg);
+}
+.About-Technologies-Title{
+    font-size: 100px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.About-Technologies-Icons i{
+    font-size: 100px;
+    color: var(--primary-color);
+    transition: 0.5s;
+}
+.About-Technologies-Icons-Item{
+    position: relative;
+    overflow: hidden;
+}
+.About-Technologies-Icons-Item:hover img{
+    bottom: 10px;
+}
+.About-Technologies-Icons-Item:hover i{
+    transform: translateY(-112px);
+}
+.About-Technologies-Icons img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    transition: 0.5s;
+}
+@media (max-width: 768px) {
+    .About-Technologies-Title,.About-Title,.About-Technologies-Icons i{
+        font-size: 60px;
+    }
+    .About-Technologies-Icons img{
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Projects */
+.card{
+    background-color: var(--tertiary-color);
+    color: white;
+    transition: 0.5s;
+
+}
+.card a{
+    background-color: var(--primary-color);
+    border: 1px solid white;
+}
+.card a:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+.card a:focus{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid white;
+    outline: none;
+
+}
+.card:hover{
+    transform: scale(1.05);
+}
+
+/* Contact */
+.Contact{
+    background-color: var(--tertiary-color);
+    color: white;
+}
+.Contact img{
+    width: 100%;
+    height: 100%;   
+}
+.Contact-Social-Icons i{
+    font-size: 50px;
+    transition: 0.5s;
+    color: white;
+}
+.Contact-Social-Icons a:hover i{
+    transform: scale(1.5);
+}
+.Contact-Social-Icons a:hover .fa-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Contact-Social-Icons a:hover .fa-linkedin {
+    color: #0077b5;
+}
+
+.Contact-Social-Icons a:hover .fa-facebook {
+    color: #4267B2;
+}
+
+.Contact-Social-Icons a:hover .fa-github {
+    color: #171515;
+}
+
+.Contact-Social-Icons a:hover .fa-code {
+    color: #1F8ACB;
+}
+
+.Contact-Social-Icons a:hover span{
+    font-size: 28px;
+}
+.Contact-Social-Icons span{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    transition: 0.5s;
+}
+
+
